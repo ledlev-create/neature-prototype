@@ -1,0 +1,74 @@
+/* ==================================================
+   COMPONENT — SOLUTION CARD
+================================================== */
+
+.solution-card {
+  min-height: 320px;
+  padding: 40px 42px 34px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--surface-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+
+  --card-accent: var(--color-accent);
+  --card-icon-bg: var(--blue-100);
+}
+
+.solution-card--blue {
+  --card-accent: var(--color-accent);
+  --card-icon-bg: var(--blue-100);
+}
+
+.solution-card--green {
+  --card-accent: var(--color-nature);
+  --card-icon-bg: var(--green-100);
+}
+
+.solution-card__icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 25px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--card-accent);
+  background: var(--card-icon-bg);
+
+  border-radius: 9px;
+}
+
+.solution-card__title {
+  margin-bottom: 18px;
+  font-size: var(--font-size-h3);
+}
+
+.solution-card__text {
+  margin-bottom: 28px;
+}
+
+.solution-card__link {
+  position: relative;
+  align-self: flex-start;
+  margin-top: auto;
+  padding-bottom: 7px;
+
+  color: var(--card-accent);
+  font-weight: 700;
+}
+
+.solution-card__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 104px;
+  height: 5px;
+
+  background: var(--card-accent);
+  border-radius: var(--radius-pill);
+}

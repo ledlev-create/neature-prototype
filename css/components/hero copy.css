@@ -1,0 +1,365 @@
+/* ==================================================
+   COMPONENT — HERO
+================================================== */
+
+/****** Image en background ******/
+. {
+  position: relative;
+  overflow: hidden;
+
+  background-image: url("../../assets/images/hero_img-clair.png");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+
+  padding-top: 140px;
+  padding-bottom: 145px;
+}
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.18) 35%,
+    rgba(255, 255, 255, 0) 70%
+  );
+
+  z-index: 0;
+}
+
+.hero__grid {
+  position: relative;
+  z-index: 1;
+
+  padding-bottom: 120px;
+}
+
+
+/* ==================================================
+   CONTENU
+================================================== */
+
+.hero__eyebrow {
+  display: inline-flex;
+
+  margin-bottom: 18px;
+  padding: 6px 12px;
+
+  color: var(--color-accent);
+  background: var(--surface-soft);
+
+  border-radius: var(--radius-pill);
+
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+}
+
+.hero__title {
+  margin-bottom: 35px;
+
+  font-size: var(--font-size-h1);
+}
+
+.hero__title span {
+  color: var(--color-accent);
+}
+
+.hero__text {
+  font-size: 1.2rem;
+  font-weight: 400;
+
+  color: var(--color-brand);
+}
+
+.hero__text-brand {
+  font-weight: 800;
+}
+
+
+/* ==================================================
+   LIGNE INSTITUTIONNELLE
+================================================== */
+
+.hero__meta-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 18px;
+
+  color: var(--color-brand);
+
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1;
+
+  opacity: 0.75;
+}
+
+.hero__meta-line span:not(:last-child)::after {
+  content: "•";
+
+  margin-left: 10px;
+
+  color: var(--color-accent);
+}
+
+
+/* ==================================================
+   HERO PROOF — BANDEAU PLEINE LARGEUR
+================================================== */
+
+.hero__proof {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  background: var(--color-brand);
+
+  color: #ffffff;
+}
+
+.hero__proof-inner {
+  width: min(calc(100% - 48px), var(--container-width));
+
+  margin-inline: auto;
+
+  min-height: 100px;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  align-items: center;
+}
+
+
+/* ==================================================
+   ITEM
+================================================== */
+
+.hero__proof-item {
+  position: relative;
+
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+
+  padding: 24px 28px;
+}
+
+
+/* ==================================================
+   ICÔNE
+================================================== */
+
+.hero__proof-icon {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+}
+
+.hero__proof-icon i {
+  font-size: 26px;
+  line-height: 1;
+}
+
+
+/* ==================================================
+   TEXTE
+================================================== */
+
+.hero__proof-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  color: #ffffff;
+
+  line-height: 1.2;
+}
+
+.hero__proof-content strong {
+  color: #ffffff;
+
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.hero__proof-content span {
+  color: #ffffff;
+
+  font-size: 0.86rem;
+  font-weight: 400;
+}
+
+
+/* ==================================================
+   TABLETTE
+================================================== */
+
+@media (max-width: 1099px) {
+
+  .hero {
+    padding-top: 110px;
+  }
+
+  .hero__grid {
+    padding-bottom: 90px;
+  }
+
+  .hero__proof-inner {
+    width: 100%;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* ==================================================
+   HERO — MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+  .hero {
+    padding-top: 70px;
+  }
+
+  .hero__grid {
+    padding-bottom: 56px;
+  }
+
+  .hero__title,
+  .hero__text,
+  .hero__meta-line {
+    width: 100%;
+  }
+
+
+  /* TITRE */
+
+  .hero__title {
+    margin-bottom: 24px;
+
+    line-height: 1.02;
+  }
+
+
+  /* TEXTE */
+
+  .hero__text {
+    margin-bottom: 32px;
+
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+
+
+  /* META */
+
+  .hero__meta-line {
+    font-size: 0.82rem;
+    line-height: 1.5;
+
+    opacity: 0.9;
+  }
+
+
+  /* PROOF */
+
+  .hero__proof-inner {
+    width: 100%;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero__proof-item {
+    justify-content: flex-start;
+
+    padding: 16px 18px;
+
+    gap: 10px;
+  }
+
+  .hero__proof-icon i {
+    font-size: 20px;
+  }
+
+  .hero__proof-content strong {
+    font-size: 0.86rem;
+  }
+
+  .hero__proof-content span {
+    font-size: 0.75rem;
+  }
+
+}
+
+
+/* ==================================================
+   HERO — PETIT MOBILE
+================================================== */
+
+@media (max-width: 420px) {
+
+  .hero {
+    padding-top: 56px;
+  }
+
+  .hero__grid {
+    padding-bottom: 42px;
+  }
+
+  .hero__title {
+    margin-bottom: 20px;
+  }
+
+  .hero__text {
+    margin-bottom: 26px;
+
+    font-size: 1rem;
+  }
+
+  .hero__meta-line {
+    font-size: 0.75rem;
+  }
+
+  .hero__proof-item {
+    padding: 13px 10px;
+
+    gap: 8px;
+  }
+
+  .hero__proof-icon i {
+    font-size: 17px;
+  }
+
+  .hero__proof-content strong {
+    font-size: 0.82rem;
+  }
+
+  .hero__proof-content span {
+    font-size: 0.7rem;
+  }
+
+}

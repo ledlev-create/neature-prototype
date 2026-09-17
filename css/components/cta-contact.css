@@ -1,0 +1,227 @@
+/* ==================================================
+   COMPONENT — CTA CONTACT
+================================================== */
+
+.cta-contact {
+  padding-block: 90px 110px;
+}
+
+.cta-contact > .container {
+  width: min(100% - 48px, var(--container-width));
+  margin-inline: auto;
+}
+
+/* ==================================================
+   BOX
+================================================== */
+
+.cta-contact__box {
+  padding: 72px 40px 56px;
+
+  text-align: center;
+
+  color: #ffffff;
+  background: var(--color-brand);
+
+  border-radius: 24px;
+}
+
+/* ==================================================
+   TITRES / TEXTES
+================================================== */
+
+.cta-contact__title {
+  margin-bottom: 18px;
+
+  color: #ffffff;
+
+  font-size: var(--font-size-h2);
+  font-weight: 600;
+  line-height: 1.08;
+}
+
+.cta-contact__text {
+  max-width: 720px;
+  margin: 0 auto 34px;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+/* ==================================================
+   ACTIONS
+================================================== */
+
+.cta-contact__actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 16px;
+
+  margin-bottom: 28px;
+}
+
+.cta-contact__button {
+  min-width: 220px;
+  padding: 16px 28px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 14px;
+
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* ==================================================
+   BOUTON NIVEAU 1 — ACTION PRINCIPALE
+================================================== */
+
+.cta-contact__button--primary {
+  background: #ffffff;
+  color: var(--color-brand);
+
+  border: 1px solid #ffffff;
+}
+
+.cta-contact__button--primary:hover {
+  background: var(--color-accent);
+  color: var(--color-brand);
+
+  border-color: var(--color-accent);
+}
+
+
+/* ==================================================
+   BOUTON NIVEAU 2 — ACTION SECONDAIRE
+================================================== */
+
+.cta-contact__button--secondary {
+  background: transparent;
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.cta-contact__button--secondary:hover {
+  background: #ffffff;
+  color: var(--color-brand);
+
+  border-color: #ffffff;
+}
+.cta-contact__button:hover {
+  transform: translateY(-2px);
+}
+
+/* ==================================================
+   META
+================================================== */
+
+.cta-contact__meta {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ==================================================
+   TABLETTE
+================================================== */
+
+@media (max-width: 1099px) {
+  .cta-contact {
+    padding-block: 80px 90px;
+  }
+
+  .cta-contact__box {
+    padding: 60px 32px 48px;
+  }
+
+  .cta-contact__text {
+    font-size: 1.05rem;
+  }
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+  .cta-contact {
+    padding-block: 64px;
+  }
+
+  .cta-contact > .container {
+    width: calc(100% - 40px);
+  }
+
+  .cta-contact__box {
+    padding: 42px 22px 34px;
+    border-radius: 18px;
+  }
+
+  .cta-contact__title {
+    margin-bottom: 14px;
+    font-size: 1.85rem;
+  }
+
+  .cta-contact__text {
+    margin-bottom: 28px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .cta-contact__actions {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .cta-contact__button {
+    width: 100%;
+    min-width: 0;
+    padding: 15px 20px;
+  }
+
+  .cta-contact__meta {
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+}
+
+/* ==================================================
+   PETIT MOBILE
+================================================== */
+
+@media (max-width: 420px) {
+  .cta-contact > .container {
+    width: calc(100% - 32px);
+  }
+
+  .cta-contact__title {
+    font-size: 1.65rem;
+  }
+
+  .cta-contact__text {
+    font-size: 0.95rem;
+  }
+
+  .cta-contact__meta {
+    font-size: 0.82rem;
+  }
+}

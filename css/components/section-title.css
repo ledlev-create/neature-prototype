@@ -1,0 +1,168 @@
+/* ==================================================
+   COMPONENT — SECTION TITLE
+================================================== */
+
+.section-title {
+  max-width: 760px;
+  margin: 45px auto 52px;
+  text-align: center;
+}
+
+.section-title__eyebrow {
+  display: inline-flex;
+  margin-bottom: 20px;
+  padding: 6px 12px;
+
+  color: var(--color-accent);
+  background: var(--surface-page);
+
+  border-radius: var(--radius-pill);
+
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+}
+
+.section-title__heading {
+  margin-bottom: 28px;
+  font-size: var(--font-size-h2);
+}
+
+.section-title__heading span {
+  font-size: 2rem;
+}
+
+.section-title__text {
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+/* ==================================================
+   FOND / COURBE "SOURIRE"
+================================================== */
+
+.section--soft {
+  position: relative;
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+.section--soft > .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Fond bleu principal */
+.section--soft::before {
+  content: "";
+
+  position: absolute;
+  inset: 0 0 100px 0;
+
+  background: #edf7fc;
+
+  z-index: 0;
+}
+
+
+/* Courbe en forme de sourire */
+/* .section--soft::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 20px;
+
+  width: 140%;
+  height: 180px;
+
+  transform: translateX(-50%);
+
+  background: #edf7fc;
+
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+
+  z-index: 1;
+} */
+
+
+/* ==================================================
+   SOLUTION CARDS
+================================================== */
+
+.solution-card {
+  min-height: 320px;
+  padding: 40px 34px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border-radius: var(--radius-md);
+
+  color: var(--color-brand);
+  text-decoration: none;
+
+  box-shadow: 0 12px 30px rgba(22, 44, 90, 0.318);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.solution-card__title {
+  margin-bottom: 18px;
+
+  color: inherit;
+
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+.solution-card__text {
+  max-width: 320px;
+  margin: 0;
+
+  color: inherit;
+
+  font-size: 1rem;
+  line-height: 1.6;
+
+  opacity: 0.82;
+}
+
+
+/* ==================================================
+   HOVER
+================================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .solution-card:hover {
+    background: var(--color-brand);
+    color: #ffffff;
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 20px 42px rgba(22, 44, 90, 0.12);
+  }
+
+}
+
+
+/* ==================================================
+   ACCESSIBILITÉ
+================================================== */
+
+.solution-card:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}

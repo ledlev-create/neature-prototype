@@ -1,0 +1,1200 @@
+/* ==================================================
+   COMPONENT — HEADER
+================================================== */
+
+/* ==================================================
+   HEADER STICKY
+================================================== */
+
+[data-component="header"] {
+  position: sticky;
+  top: 0;
+
+  z-index: 10000;
+}
+
+
+.site-header {
+  position: relative;
+  z-index: 1;
+
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid var(--border-default);
+}
+
+
+.site-header__inner {
+  width: min(100% - 40px, 1600px);
+  margin-inline: auto;
+
+  min-height: 90px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 86px;
+}
+
+
+/* ==================================================
+   LOGO
+================================================== */
+
+.site-header__logo {
+  display: block;
+
+  flex-shrink: 0;
+}
+
+
+.site-header__logo img {
+  display: block;
+
+  width: 150px;
+  height: auto;
+}
+
+
+/* ==================================================
+   NAVIGATION
+================================================== */
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+
+  gap: 50px;
+
+  margin-left: auto;
+
+  color: var(--text-heading);
+}
+
+
+/*
+ * On cible uniquement les liens principaux du header.
+ * Cela évite d'appliquer ces styles aux liens
+ * présents à l'intérieur du mega-menu.
+ */
+
+.site-header__nav > a,
+.site-header__nav > .nav-item--mega > .nav-item__link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  white-space: nowrap;
+
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+
+/* ==================================================
+   SEPARATEURS NAVIGATION
+================================================== */
+
+.site-header__nav .nav-separator-left {
+  margin-left: 18px;
+}
+
+
+.site-header__nav .nav-separator-left::before {
+  content: "";
+
+  position: absolute;
+
+  left: -24px;
+  top: 50%;
+
+  width: 1px;
+  height: 24px;
+
+  background: #8fa0b5;
+
+  transform: translateY(-50%);
+}
+
+
+/* ==================================================
+   ACTIONS
+================================================== */
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  flex-shrink: 0;
+}
+
+
+.site-header__actions .button {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+
+  white-space: nowrap;
+}
+
+
+.site-header__actions .fi-ss-phone-call {
+  font-size: 16px;
+
+  margin-top: 5px;
+
+  color: #000;
+}
+
+
+/* ==================================================
+   ICONES
+================================================== */
+
+.user-lock {
+  margin-left: 20px;
+}
+
+
+.fi.fi-sr-user-lock {
+  font-size: 20px;
+}
+
+
+/* ==================================================
+   BURGER
+================================================== */
+
+.site-header__burger {
+  display: none;
+
+  padding: 8px;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+
+.site-header__burger span {
+  display: block;
+
+  width: 24px;
+  height: 2px;
+
+  margin: 5px 0;
+
+  background: var(--color-brand);
+}
+
+
+/* ==================================================
+   MEGA MENU — DESKTOP
+================================================== */
+
+@media (min-width: 1100px) {
+
+
+  /* ==================================================
+     NAVIGATION DESKTOP
+  ================================================== */
+
+  /*
+   * La navigation occupe toute la hauteur du header.
+   * Cela permet de garder le hover lorsque la souris
+   * descend vers le mega-menu.
+   */
+
+  .site-header__nav {
+    align-self: stretch;
+  }
+
+
+  /* ==================================================
+     ENTREE PARTICULIERS
+  ================================================== */
+
+  .nav-item--mega {
+    position: static;
+
+    display: flex;
+    align-items: center;
+
+    align-self: stretch;
+  }
+
+
+  /*
+   * Le lien Particuliers prend toute la hauteur
+   * du header tout en gardant son texte centré.
+   */
+
+  .nav-item__link {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    height: 100%;
+  }
+
+
+  /* ==================================================
+     CHEVRON PARTICULIERS
+  ================================================== */
+
+  .nav-item__link > i {
+    display: inline-flex;
+
+    font-size: 14px;
+
+    transition: transform 0.2s ease;
+  }
+
+
+  .nav-item--mega:hover .nav-item__link > i,
+  .nav-item--mega:focus-within .nav-item__link > i {
+    transform: rotate(180deg);
+  }
+
+
+  /* ==================================================
+     INDICATEUR BLEU — PARTICULIERS
+  ================================================== */
+
+  .nav-item__link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 18px;
+
+    height: 3px;
+
+    border-radius: 999px;
+
+    background: var(--color-brand-light, #41b1e4);
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform 0.2s ease;
+  }
+
+
+  .nav-item--mega:hover .nav-item__link::after,
+  .nav-item--mega:focus-within .nav-item__link::after {
+    transform: scaleX(1);
+  }
+
+
+  /* ==================================================
+     CONTENEUR MEGA MENU
+  ================================================== */
+
+  .mega-menu {
+    position: absolute;
+
+    z-index: 200;
+
+    /*
+     * Le -1px évite une micro-coupure entre
+     * le header et le mega-menu.
+     */
+
+    top: calc(100% - 1px);
+    left: 50%;
+
+    width: min(calc(100vw - 40px), 1160px);
+
+    /*
+     * L'espace visuel fait partie du mega-menu.
+     * La souris peut donc le traverser sans
+     * perdre le hover.
+     */
+
+    padding-top: 14px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform:
+      translateX(-50%)
+      translateY(-8px);
+
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0.2s ease;
+  }
+
+
+  /* ==================================================
+     OUVERTURE MEGA MENU
+  ================================================== */
+
+  .nav-item--mega:hover .mega-menu,
+  .nav-item--mega:focus-within .mega-menu {
+    opacity: 1;
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+      translateX(-50%)
+      translateY(0);
+  }
+
+
+  /* ==================================================
+     PANNEAU BLANC
+  ================================================== */
+
+  .mega-menu__inner {
+    display: grid;
+
+    grid-template-columns: 430px 1fr;
+
+    min-height: 500px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border-default);
+    border-radius: 18px;
+
+    box-shadow:
+      0 20px 50px rgba(17, 42, 82, 0.13);
+  }
+
+
+  /* ==================================================
+     COLONNE GAUCHE
+  ================================================== */
+
+  .mega-menu__categories {
+    padding: 36px 34px 30px;
+
+    border-right: 1px solid var(--border-default);
+  }
+
+
+  /* ==================================================
+     TITRE PARTICULIERS
+  ================================================== */
+
+  .mega-menu__heading {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 42px;
+  }
+
+
+  .mega-menu__heading > i {
+    display: grid;
+    place-items: center;
+
+    width: 56px;
+    height: 56px;
+
+    flex-shrink: 0;
+
+    font-size: 23px;
+
+    color: var(--color-brand);
+
+    background: var(--color-background);
+
+    border-radius: 50%;
+  }
+
+
+  .mega-menu__heading span {
+    color: var(--text-heading);
+
+    font-size: 1.6rem;
+    font-weight: 700;
+
+    line-height: 1.1;
+  }
+
+
+  /* ==================================================
+     LABEL — PAR TYPE DE NUISIBLE
+  ================================================== */
+
+  .mega-menu__label {
+    margin: 0;
+
+    padding: 0 8px 14px;
+
+    color: #7d91ad;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    border-bottom: 1px solid var(--border-default);
+  }
+
+
+  /* ==================================================
+     CATEGORIES
+  ================================================== */
+
+  .mega-menu__category {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: auto 1fr auto;
+
+    align-items: center;
+
+    gap: 16px;
+
+    min-height: 74px;
+
+    padding: 8px 16px 8px 8px;
+
+    color: var(--text-heading);
+
+    background: transparent;
+
+    border: 0;
+    border-bottom: 1px solid var(--border-default);
+
+    border-radius: 0;
+
+    font: inherit;
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+      background 0.18s ease,
+      color 0.18s ease,
+      border-radius 0.18s ease;
+  }
+
+
+  .mega-menu__category:last-child {
+    border-bottom-color: transparent;
+  }
+
+
+  /* ==================================================
+     ICONES CATEGORIES
+  ================================================== */
+
+  .mega-menu__category-icon {
+    display: grid;
+    place-items: center;
+
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    background: var(--color-background);
+
+    border-radius: 50%;
+  }
+
+
+  .mega-menu__category-icon i {
+    display: inline-flex;
+
+    color: var(--color-brand);
+
+    font-size: 20px;
+  }
+
+
+  /* ==================================================
+     CHEVRON CATEGORIES
+  ================================================== */
+
+  .mega-menu__category > i:last-child {
+    display: inline-flex;
+
+    color: #8fa0b5;
+
+    font-size: 18px;
+
+    transition:
+      transform 0.18s ease,
+      color 0.18s ease;
+  }
+
+
+  /* ==================================================
+     CATEGORIE ACTIVE / HOVER
+  ================================================== */
+
+  .mega-menu__category:hover,
+  .mega-menu__category.is-active {
+    color: var(--color-brand);
+
+    background: var(--color-background);
+
+    border-bottom-color: transparent;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+  }
+
+
+  .mega-menu__category:hover > i:last-child,
+  .mega-menu__category.is-active > i:last-child {
+    color: var(--color-brand);
+
+    transform: translateX(3px);
+  }
+
+
+  /* ==================================================
+     COLONNE DROITE
+  ================================================== */
+
+  .mega-menu__content {
+    position: relative;
+
+    padding: 64px 70px;
+  }
+
+
+  /* ==================================================
+     PANNEAUX
+  ================================================== */
+
+  .mega-menu__panel {
+    display: none;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 26px;
+  }
+
+
+  .mega-menu__panel.is-active {
+    display: flex;
+  }
+
+
+  /* ==================================================
+     LIENS ESPECES / SERVICES
+  ================================================== */
+
+  .mega-menu__panel > a {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    width: auto;
+
+    color: var(--text-heading);
+
+    white-space: normal;
+
+    font-size: 1.15rem;
+    font-weight: 500;
+
+    line-height: 1.3;
+
+    transition:
+      color 0.18s ease,
+      transform 0.18s ease;
+  }
+
+
+  .mega-menu__panel > a:hover {
+    color: var(--color-brand-light, #41b1e4);
+
+    transform: translateX(4px);
+  }
+
+
+  /* ==================================================
+     VOIR TOUS...
+  ================================================== */
+
+  .mega-menu__panel > .mega-menu__view-all {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 8px;
+
+    color: var(--color-brand-light, #41b1e4);
+
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+
+  .mega-menu__view-all i {
+    display: inline-flex;
+
+    font-size: 16px;
+
+    transition: transform 0.18s ease;
+  }
+
+
+  .mega-menu__view-all:hover i {
+    transform: translateX(4px);
+  }
+}
+
+
+/* ==================================================
+   MEGA MENU — LISTE EN 2 COLONNES
+================================================== */
+
+.mega-menu__links-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: 70px;
+  row-gap: 28px;
+
+  width: 100%;
+}
+
+
+.mega-menu__links-grid > a {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+
+  color: var(--text-heading);
+
+  white-space: normal;
+
+  font-size: 1.15rem;
+  font-weight: 500;
+
+  line-height: 1.3;
+
+  transition:
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+
+.mega-menu__links-grid > a:hover {
+  color: var(--color-brand-light, #41b1e4);
+
+  transform: translateX(4px);
+}
+
+
+
+/* ==================================================
+   RESPONSIVE — TABLETTE / MOBILE
+================================================== */
+
+@media (max-width: 1099px) {
+
+  /* ==================================================
+     HEADER
+  ================================================== */
+
+  .site-header__inner {
+    position: relative;
+
+    min-height: 78px;
+
+    gap: 24px;
+  }
+
+
+  .site-header__logo img {
+    width: 135px;
+  }
+
+
+  /* ==================================================
+     BURGER
+  ================================================== */
+
+  .site-header__burger {
+    position: relative;
+    z-index: 20;
+
+    display: block;
+
+    margin-left: auto;
+    padding: 8px;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+  }
+
+
+  .site-header__burger span {
+    display: block;
+
+    width: 25px;
+    height: 2px;
+
+    margin: 5px 0;
+
+    background: var(--color-brand);
+
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
+  }
+
+
+  /* Animation burger → croix */
+
+  .site-header__burger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .site-header__burger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .site-header__burger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+
+  /* ==================================================
+     NAVIGATION MOBILE
+  ================================================== */
+
+  .site-header__nav {
+    position: absolute;
+
+    top: 100%;
+    left: -20px;
+    right: -20px;
+
+    z-index: 10;
+
+    display: none;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0;
+
+    margin: 0;
+    padding: 20px 24px 28px;
+
+    max-height: calc(100vh - 78px);
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border-top: 1px solid var(--border-default);
+    border-bottom: 1px solid var(--border-default);
+
+    box-shadow:
+      0 18px 35px rgba(22, 44, 90, 0.1);
+  }
+
+
+  /* Ouverture du menu */
+
+  .site-header.is-menu-open .site-header__nav {
+    display: flex;
+  }
+
+
+  /* ==================================================
+     LIENS PRINCIPAUX
+  ================================================== */
+
+  .site-header__nav > a,
+  .site-header__nav > .nav-item--mega > .nav-item__link {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 0;
+
+    color: var(--color-brand);
+
+    border-bottom: 1px solid var(--border-default);
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    white-space: normal;
+  }
+
+
+  /* On retire les séparateurs desktop */
+
+  .site-header__nav .nav-separator-left {
+    margin-left: 0;
+  }
+
+  .site-header__nav .nav-separator-left::before {
+    display: none;
+  }
+
+
+  /* ==================================================
+     ENTREES AVEC SOUS-MENU
+  ================================================== */
+
+  .nav-item--mega {
+    display: block;
+
+    width: 100%;
+  }
+
+
+  .nav-item__link > i {
+    display: inline-flex;
+
+    font-size: 16px;
+
+    transition: transform 0.25s ease;
+  }
+
+
+  .nav-item--mega.is-open > .nav-item__link > i {
+    transform: rotate(180deg);
+  }
+
+
+  /* ==================================================
+     MEGA MENU MOBILE
+  ================================================== */
+
+  .mega-menu {
+    position: static;
+
+    display: none;
+
+    width: 100%;
+
+    padding: 0;
+
+    opacity: 1;
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: none;
+  }
+
+
+  .nav-item--mega.is-open > .mega-menu {
+    display: block;
+  }
+
+
+  .mega-menu__inner {
+    display: block;
+
+    min-height: 0;
+
+    overflow: visible;
+
+    padding: 8px 0 20px;
+
+    background: transparent;
+
+    border: 0;
+    border-radius: 0;
+
+    box-shadow: none;
+  }
+
+
+  /* ==================================================
+     COLONNE GAUCHE
+  ================================================== */
+
+  .mega-menu__categories {
+    padding: 0;
+
+    border: 0;
+  }
+
+
+  .mega-menu__heading {
+    display: none;
+  }
+
+
+  /* ==================================================
+     CATEGORIES
+  ================================================== */
+
+  .mega-menu__category {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: auto 1fr auto;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 58px;
+
+    padding: 8px 12px;
+
+    color: var(--color-brand);
+
+    background: transparent;
+
+    border: 0;
+    border-bottom: 1px solid var(--border-default);
+
+    border-radius: 0;
+
+    font: inherit;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    text-align: left;
+
+    cursor: pointer;
+  }
+
+
+  .mega-menu__category-icon {
+    display: grid;
+    place-items: center;
+
+    width: 38px;
+    height: 38px;
+
+    background: var(--color-background);
+
+    border-radius: 50%;
+  }
+
+
+  .mega-menu__category-icon i {
+    color: var(--color-brand);
+
+    font-size: 17px;
+  }
+
+
+  .mega-menu__category > i:last-child {
+    color: #8fa0b5;
+
+    font-size: 16px;
+
+    transition: transform 0.2s ease;
+  }
+
+
+  .mega-menu__category.is-active {
+    color: var(--color-brand);
+
+    background: var(--surface-soft);
+
+    border-radius: var(--radius-sm);
+
+    font-weight: 600;
+  }
+
+
+  .mega-menu__category.is-active > i:last-child {
+    transform: rotate(90deg);
+  }
+
+
+  /* ==================================================
+     PANNEAUX
+  ================================================== */
+
+  .mega-menu__content {
+    padding: 0;
+  }
+
+
+  .mega-menu__panel {
+    display: none;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    padding: 10px 12px 16px 58px;
+  }
+
+
+  .mega-menu__panel.is-active {
+    display: flex;
+  }
+
+
+  .mega-menu__panel > a {
+    display: block;
+
+    width: 100%;
+
+    padding: 10px 0;
+
+    color: var(--color-brand);
+
+    font-size: 0.95rem;
+    font-weight: 400;
+
+    line-height: 1.4;
+  }
+
+
+  .mega-menu__panel > a:hover {
+    color: var(--color-accent);
+
+    transform: none;
+  }
+
+
+  .mega-menu__panel > .mega-menu__view-all {
+    margin-top: 6px;
+
+    color: var(--color-accent);
+
+    font-weight: 600;
+  }
+
+
+  /* ==================================================
+     ACTIONS
+  ================================================== */
+
+  .site-header__actions {
+    position: absolute;
+
+    top: 100%;
+    left: -20px;
+    right: -20px;
+
+    z-index: 11;
+
+    display: none;
+  }
+
+
+  /*
+   * Les actions seront intégrées visuellement
+   * sous la navigation via le menu ouvert.
+   */
+
+  .site-header.is-menu-open .site-header__actions {
+    display: none;
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+  .site-header__inner {
+    width: min(100% - 32px, 1600px);
+
+    min-height: 72px;
+  }
+
+
+  .site-header__logo img {
+    width: 125px;
+  }
+
+
+  .site-header__nav {
+    left: -16px;
+    right: -16px;
+
+    max-height: calc(100vh - 72px);
+
+    padding:
+      16px
+      var(--space-md)
+      28px;
+  }
+
+
+  .site-header__nav > a,
+  .site-header__nav > .nav-item--mega > .nav-item__link {
+    padding-block: 16px;
+
+    font-size: 0.98rem;
+  }
+
+
+  .mega-menu__category {
+    min-height: 54px;
+
+    padding-inline: 8px;
+
+    font-size: 0.92rem;
+  }
+
+
+  .mega-menu__panel {
+    padding-left: 50px;
+  }
+
+
+  .mega-menu__panel > a {
+    padding-block: 9px;
+
+    font-size: 0.92rem;
+  }
+
+}

@@ -1,0 +1,345 @@
+/* ==================================================
+   COMPONENT — PREUVE CONFORMITE
+================================================== */
+
+.preuve-conformite {
+  background: var(--color-background);
+}
+
+/* ==================================================
+   LAYOUT
+================================================== */
+
+.preuve-conformite__inner {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 66%)
+    minmax(0, 34%);
+
+  width: 100%;
+
+  min-height: 760px;
+}
+
+/* ==================================================
+   COLONNE CONTENU
+================================================== */
+
+.preuve-conformite__content {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+
+  padding: var(--space-4l) var(--space-3l) var(--space-4l)
+    clamp(70px, 8vw, 150px);
+}
+
+/* ==================================================
+   TITRE
+================================================== */
+
+.preuve-conformite__title {
+  max-width: 760px;
+
+  margin: 0 0 var(--space-md);
+
+  color: var(--color-brand);
+
+  font-family: var(--font-title);
+  font-size: var(--font-size-h2);
+  font-weight: 650;
+  line-height: 1.05;
+}
+
+.preuve-conformite__title span {
+  color: var(--color-accent);
+}
+
+/* ==================================================
+   INTRO
+================================================== */
+
+.preuve-conformite__intro {
+  max-width: 820px;
+
+  margin: 0 0 var(--space-lg);
+
+  color: var(--color-brand);
+
+  font-family: var(--font-text);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+
+  opacity: 0.76;
+}
+
+/* ==================================================
+   GRILLE DES PREUVES
+================================================== */
+
+.preuve-conformite__grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: var(--space-lg) var(--space-xl);
+
+  width: 100%;
+
+  max-width: 1000px;
+}
+
+/* ==================================================
+   ITEM
+================================================== */
+
+.preuve-conformite__item {
+  display: grid;
+
+  grid-template-columns: 34px minmax(0, 1fr);
+
+  align-items: start;
+
+  gap: var(--space-sm);
+}
+
+/* ==================================================
+   ICON
+================================================== */
+
+.preuve-conformite__icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 3px;
+
+  flex-shrink: 0;
+
+  color: #fff;
+  background: var(--color-brand);
+
+  border-radius: var(--radius-pill);
+}
+
+.preuve-conformite__icon i {
+  display: inline-flex;
+
+  font-size: 0.95rem;
+}
+
+/* ==================================================
+   TITRE ITEM
+================================================== */
+
+.preuve-conformite__item-content h3 {
+  margin: 0 0 var(--space-xs);
+
+  color: var(--color-brand);
+
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* ==================================================
+   TEXTE ITEM
+================================================== */
+
+.preuve-conformite__item-content p {
+  margin: 0;
+
+  color: var(--color-brand);
+
+  font-family: var(--font-text);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.6;
+
+  opacity: 0.76;
+}
+
+/* ==================================================
+   LIENS
+================================================== */
+
+.preuve-conformite__item-content a {
+  color: var(--color-accent);
+
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.preuve-conformite__item-content a:hover {
+  color: var(--color-brand);
+}
+
+/* ==================================================
+   IMAGE
+================================================== */
+
+.preuve-conformite__media {
+  position: relative;
+
+  min-height: 100%;
+
+  overflow: hidden;
+
+  background: var(--surface-soft);
+}
+
+.preuve-conformite__media img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* ==================================================
+   TABLETTE
+================================================== */
+
+@media (max-width: 1099px) {
+
+  .preuve-conformite__inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .preuve-conformite__content {
+    order: 1;
+
+    padding:
+      var(--space-3l)
+      var(--space-lg);
+  }
+
+  .preuve-conformite__grid {
+    max-width: none;
+
+    gap:
+      var(--space-lg)
+      var(--space-lg);
+  }
+
+  .preuve-conformite__media {
+    order: 2;
+
+    min-height: 420px;
+  }
+
+  .preuve-conformite__media img {
+    position: relative;
+
+    height: 420px;
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+  .preuve-conformite__content {
+    padding:
+      var(--space-xl)
+      var(--space-md);
+  }
+
+  .preuve-conformite__title {
+    margin-bottom: var(--space-sm);
+  }
+
+  .preuve-conformite__intro {
+    margin-bottom: var(--space-lg);
+  }
+
+  .preuve-conformite__grid {
+    grid-template-columns: 1fr;
+
+    gap: var(--space-md);
+  }
+
+  .preuve-conformite__item {
+    grid-template-columns: 30px minmax(0, 1fr);
+
+    gap: var(--space-sm);
+  }
+
+  .preuve-conformite__icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .preuve-conformite__item-content h3 {
+    font-size: 1rem;
+  }
+
+  .preuve-conformite__item-content p {
+    font-size: 0.95rem;
+  }
+
+  .preuve-conformite__media {
+    min-height: 320px;
+  }
+
+  .preuve-conformite__media img {
+    height: 320px;
+  }
+
+}
+
+
+/* ==================================================
+   PETIT MOBILE
+================================================== */
+
+@media (max-width: 420px) {
+
+  .preuve-conformite__content {
+    padding:
+      var(--space-lg)
+      var(--space-sm);
+  }
+
+  .preuve-conformite__grid {
+    gap: var(--space-md);
+  }
+
+  .preuve-conformite__item {
+    grid-template-columns: 28px minmax(0, 1fr);
+  }
+
+  .preuve-conformite__icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .preuve-conformite__media {
+    min-height: 260px;
+  }
+
+  .preuve-conformite__media img {
+    height: 260px;
+  }
+
+}

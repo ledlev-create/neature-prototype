@@ -1,0 +1,168 @@
+/* ==================================================
+  CSS GENERAL DES PAGES "EXPERTISE"
+================================================== */
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.expertise-hero {
+  padding-block: 120px 80px;
+}
+
+.expertise-hero__container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.expertise-hero__title {
+  margin-top: 24px;
+}
+
+.expertise-hero__title-accent {
+  display: block;
+}
+
+.expertise-hero__intro {
+  margin-top: 32px;
+  max-width: 700px;
+}
+
+.expertise-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+
+/* ==================================================
+   SIGNES / INDICES
+================================================== */
+
+.expertise-signs {
+  padding-block: 96px;
+}
+
+.expertise-signs__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+
+/* ==================================================
+   MÉTHODE
+================================================== */
+
+.expertise-method {
+  padding-block: 96px;
+}
+
+.expertise-method__steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+
+/* ==================================================
+   APPROCHE NEATURE
+================================================== */
+
+.expertise-approach {
+  padding-block: 96px;
+}
+
+.expertise-approach__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+
+/* ==================================================
+   PUBLICS
+================================================== */
+
+.expertise-publics {
+  padding-block: 96px;
+}
+
+.expertise-publics__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+
+/* ==================================================
+   PRÉVENTION
+================================================== */
+
+.expertise-prevention {
+  padding-block: 96px;
+}
+
+.expertise-prevention__grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 900px) {
+
+  .expertise-hero__container,
+  .expertise-approach__grid,
+  .expertise-prevention__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .expertise-signs__grid,
+  .expertise-method__steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .expertise-publics__grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .expertise-hero {
+    padding-block: 80px 56px;
+  }
+
+  .expertise-signs,
+  .expertise-method,
+  .expertise-approach,
+  .expertise-publics,
+  .expertise-prevention {
+    padding-block: 64px;
+  }
+
+  .expertise-signs__grid,
+  .expertise-method__steps {
+    grid-template-columns: 1fr;
+  }
+
+  .expertise-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+}

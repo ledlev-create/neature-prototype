@@ -1,0 +1,275 @@
+/* ==================================================
+   HERO ENTREPRISES
+================================================== */
+
+.entreprises-hero {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 58% 42%;
+
+  min-height: 720px;
+
+  overflow: hidden;
+
+  background: #f7fafc;
+}
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.entreprises-hero__content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+
+  padding: var(--space-xxl) var(--space-xl) var(--space-xxl)
+    clamp(140px, 10vw, 220px);
+
+  background: #f7fafc;
+}
+
+/* ==================================================
+   ANCIENNE FORME ARRONDIE
+   supprimée : la forme est maintenant portée
+   directement par la photographie
+================================================== */
+
+.entreprises-hero__content::after {
+  display: none;
+}
+
+/* ==================================================
+   INNER
+================================================== */
+
+.entreprises-hero__inner {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+  max-width: 700px;
+}
+
+/* ==================================================
+   TITLE
+================================================== */
+
+.entreprises-hero__title {
+  max-width: 680px;
+
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-md);
+
+  color: var(--color-brand);
+
+  font-family: var(--font-title);
+  font-size: var(--font-size-h1);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.entreprises-hero__title span {
+  color: var(--color-accent);
+}
+
+/* ==================================================
+   SUBTITLE
+================================================== */
+
+.entreprises-hero__subtitle {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: var(--color-brand);
+
+  font-family: var(--font-text);
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.55;
+
+  opacity: 0.76;
+}
+
+/* ==================================================
+   MEDIA
+   forme organique / feuille
+================================================== */
+
+.entreprises-hero__media {
+  position: relative;
+  z-index: 1;
+
+  min-width: 0;
+  min-height: 680px;
+
+  margin: var(--space-md) var(--space-md) var(--space-md) 0;
+
+  overflow: hidden;
+
+  /*
+    Forme feuille :
+    haut gauche / haut droite / bas droite / bas gauche
+  */
+ /* border-radius: 0px 0px 345px 0px; */
+}
+
+.entreprises-hero__image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: 48% center;
+}
+
+/* ==================================================
+   DESKTOP / LAPTOP
+================================================== */
+
+@media (max-width: 1390px) {
+  .entreprises-hero {
+    grid-template-columns: 55% 45%;
+
+    min-height: 650px;
+  }
+
+  .entreprises-hero__content {
+    padding: var(--space-xl) var(--space-lg) var(--space-xl)
+      clamp(70px, 6vw, 110px);
+  }
+
+  .entreprises-hero__inner {
+    max-width: 580px;
+  }
+
+  .entreprises-hero__title {
+    max-width: 570px;
+  }
+
+  .entreprises-hero__subtitle {
+    max-width: 560px;
+
+    font-size: 1rem;
+  }
+
+  .entreprises-hero__media {
+    min-height: 610px;
+
+    margin: var(--space-md) var(--space-md) var(--space-md) 0;
+
+    /* Forme légèrement plus douce sur laptop */
+    /* border-radius: 345px 0px; */
+  }
+
+  .entreprises-hero__image {
+    object-position: 52% center;
+  }
+}
+
+/* ==================================================
+   TABLETTE / PETIT LAPTOP
+================================================== */
+
+@media (max-width: 1050px) {
+  .entreprises-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .entreprises-hero__content {
+    padding: var(--space-xl) var(--space-md) var(--space-lg);
+  }
+
+  .entreprises-hero__inner,
+  .entreprises-hero__title,
+  .entreprises-hero__subtitle {
+    max-width: none;
+  }
+
+  .entreprises-hero__title {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .entreprises-hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .entreprises-hero__media {
+    width: calc(100% - 2 * var(--space-md));
+
+    height: 360px;
+    min-height: 360px;
+
+    margin: 0 var(--space-md) var(--space-md);
+
+    overflow: hidden;
+
+    /* Forme feuille conservée */
+    /* border-radius: 345px 0px; */
+  }
+
+  .entreprises-hero__image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: 58% center;
+  }
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 780px) {
+  .entreprises-hero__content {
+    padding: var(--space-xl) var(--space-md) var(--space-lg);
+  }
+
+  .entreprises-hero__media { 
+    width: calc(100% - 2 * var(--space-md));
+
+    height: 320px;
+    min-height: 320px;
+
+    margin: 0 var(--space-md) var(--space-md);
+
+    /* border-radius: 345px 0px; */
+  }
+
+  .entreprises-hero__image {
+    object-position: 58% center;
+  }
+}
+
+/* ==================================================
+   PETIT MOBILE
+================================================== */
+
+@media (max-width: 480px) {
+  .entreprises-hero__content {
+    padding: var(--space-lg) var(--space-sm) var(--space-lg);
+  }
+
+  .entreprises-hero__media {
+    width: calc(100% - 2 * var(--space-sm));
+
+    height: 280px;
+    min-height: 280px;
+
+    margin: 0 var(--space-sm) var(--space-sm);
+
+    /* border-radius: 345px 0px; */
+  }
+
+  .entreprises-hero__image {
+    object-position: 60% center;
+  }
+}

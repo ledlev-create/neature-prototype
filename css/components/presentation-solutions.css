@@ -1,0 +1,315 @@
+/* ==================================================
+   COMPONENT — PRESENTATION SOLUTIONS
+================================================== */
+
+.presentation-solutions {
+  padding-block: 90px 120px;
+  background: var(--color-background);
+
+  /* background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #edf7fc 50%,
+    #edf7fc 60%,
+    #ffffff 100%
+  ); */
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.presentation-solutions__header {
+  max-width: 850px;
+
+  margin: 0 auto 60px;
+
+  text-align: center;
+}
+
+.presentation-solutions__eyebrow {
+  display: inline-flex;
+
+  margin-bottom: 16px;
+  padding: 6px 14px;
+
+  color: var(--color-accent);
+  background: rgba(255, 255, 255, 0.88);
+
+  border-radius: var(--radius-pill);
+
+  font-weight: 600;
+}
+
+.presentation-solutions__title {
+  margin-bottom: 18px;
+
+  color: var(--color-brand);
+
+  font-size: var(--font-size-h2);
+  font-weight: 650;
+  line-height: 1.06;
+}
+
+.presentation-solutions__intro {
+  max-width: 780px;
+
+  margin-inline: auto;
+
+  color: var(--color-brand);
+
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+
+  opacity: 0.78;
+}
+
+
+/* ==================================================
+   GRID
+================================================== */
+
+.presentation-solutions__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+}
+
+
+/* ==================================================
+   CARD — COULEURS PAR DOMAINE
+================================================== */
+
+.presentation-solution-card--nuisibles {
+  --accent: #4A90B8;
+  --accent-soft: #F8FBFD;
+}
+
+.presentation-solution-card--bati {
+  --accent: #4E8B61;
+  --accent-soft: #F8FBF9;
+}
+
+.presentation-solution-card--bois {
+  --accent: #C58A32;
+  --accent-soft: #FFFBF3;
+}
+
+
+/* ==================================================
+   CARD
+================================================== */
+
+.presentation-solution-card {
+  min-height: 390px;
+
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--accent-soft, #ffffff);
+
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-md);
+
+  box-shadow:
+    0 14px 34px rgba(22, 44, 90, 0.07);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.presentation-solution-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 20px 46px rgba(22, 44, 90, 0.11);
+
+  border-color: var(--accent);
+}
+
+
+/* ==================================================
+   ICON
+================================================== */
+
+.presentation-solution-card__icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 24px;
+
+  background: transparent;
+
+  border: none;
+}
+
+
+/* ==================================================
+   TITLE
+================================================== */
+
+.presentation-solution-card__title {
+  margin-bottom: 18px;
+
+  color: var(--color-brand);
+
+  font-size: var(--font-size-h3);
+  font-weight: 550;
+  line-height: 1.15;
+}
+
+
+/* ==================================================
+   TEXT
+================================================== */
+
+.presentation-solution-card__text {
+  margin-bottom: 20px;
+
+  color: var(--color-brand);
+
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.6;
+
+  opacity: 0.76;
+}
+
+
+/* ==================================================
+   TAGS / DOMAINES
+================================================== */
+
+.presentation-solution-card__tags {
+  margin-bottom: 30px;
+
+  color: var(--color-brand);
+
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+
+/* ==================================================
+   LINK
+================================================== */
+
+.presentation-solution-card__link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  align-self: flex-start;
+
+  margin-top: auto;
+
+  color: var(--color-brand);
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.presentation-solution-card__link span {
+  display: none;
+}
+
+.presentation-solution-card__link::after {
+  content: "›";
+
+  color: var(--accent);
+
+  font-size: 1.15rem;
+  font-weight: 500;
+
+  line-height: 1;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.presentation-solution-card__link:hover {
+  color: var(--accent);
+}
+
+.presentation-solution-card__link:hover::after {
+  transform: translateX(3px);
+}
+
+
+/* ==================================================
+   RESPONSIVE — TABLETTE
+================================================== */
+
+@media (max-width: 1050px) {
+
+  .presentation-solutions {
+    padding-block: 90px;
+  }
+
+  .presentation-solutions__grid {
+    grid-template-columns: 1fr;
+
+    max-width: 650px;
+
+    margin-inline: auto;
+  }
+
+  .presentation-solution-card {
+    min-height: auto;
+  }
+
+}
+
+
+/* ==================================================
+   RESPONSIVE — MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+  .presentation-solutions {
+    padding-block: 64px;
+  }
+
+  .presentation-solutions__header {
+    margin-bottom: 40px;
+  }
+
+  .presentation-solutions__intro {
+    font-size: 0.95rem;
+  }
+
+  .presentation-solution-card {
+    padding: 30px 26px;
+  }
+
+  .presentation-solution-card__icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .presentation-solution-card__picto {
+    width: 31px;
+    height: 31px;
+  }
+
+}

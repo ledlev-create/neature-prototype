@@ -1,0 +1,406 @@
+/* ==================================================
+   COMPONENT — FOOTER
+================================================== */
+
+.site-footer {
+  background: var(--color-brand);
+  color: var(--text-inverse);
+
+  padding-top: 180px;
+}
+
+
+/* =========================
+   TOP
+========================= */
+
+.site-footer__top {
+  display: grid;
+
+  grid-template-columns:
+    1.05fr
+    1fr
+    1fr
+    1fr
+    1.15fr;
+
+  gap: 56px;
+
+  padding-bottom: 64px;
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.site-footer__brand {
+  min-width: 0;
+}
+
+.site-footer__logo {
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.site-footer__logo img {
+  width: 190px;
+  height: auto;
+}
+
+.site-footer__baseline {
+  margin-bottom: 32px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+
+/* =========================
+   SOCIALS
+========================= */
+
+.site-footer__socials {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 56px;
+}
+
+.site-footer__socials a {
+  display: grid;
+  place-items: center;
+
+  color: #fff;
+
+  font-size: 20px;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.site-footer__socials a:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   TITRES
+========================= */
+
+.site-footer__column-title {
+  margin-bottom: 28px;
+
+  color: #fff;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.site-footer__subtitle {
+  margin-top: 30px;
+  margin-bottom: 16px;
+
+  color: #fff;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.site-footer__column-title + .site-footer__subtitle {
+  margin-top: 0;
+}
+
+
+/* =========================
+   LISTES
+========================= */
+
+.site-footer__list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.site-footer__list li + li {
+  margin-top: 12px;
+}
+
+.site-footer__list a {
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 0.88rem;
+  line-height: 1.4;
+
+  transition: color 0.2s ease;
+}
+
+.site-footer__list a:hover {
+  color: var(--color-accent);
+}
+
+
+/* liens À propos plus forts */
+
+.site-footer__list--strong a {
+  color: #fff;
+  font-weight: 600;
+}
+
+
+/* =========================
+   À PROPOS
+========================= */
+
+.site-footer__about {
+  margin-top: 16px;
+}
+
+
+/* =========================
+   BOTTOM
+========================= */
+
+.site-footer__bottom {
+  min-height: 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 32px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.55);
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 0.82rem;
+}
+
+
+/* =========================
+   LEGAL
+========================= */
+
+.site-footer__legal {
+  display: flex;
+  align-items: center;
+
+  gap: 24px;
+}
+
+.site-footer__legal a:hover {
+  color: #fff;
+}
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+/* TABLETTE LARGE */
+@media (max-width: 1200px) {
+
+  .site-footer {
+    padding-top: 120px;
+  }
+
+  .site-footer__top {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 56px 40px;
+
+    padding-bottom: 56px;
+  }
+
+  .site-footer__bottom {
+    min-height: 100px;
+  }
+
+}
+
+
+/* TABLETTE */
+@media (max-width: 850px) {
+
+  .site-footer {
+    padding-top: 88px;
+  }
+
+  .site-footer__top {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 52px 36px;
+
+    padding-bottom: 48px;
+  }
+
+  .site-footer__socials {
+    margin-bottom: 40px;
+  }
+
+  .site-footer__column-title {
+    margin-bottom: 22px;
+  }
+
+  .site-footer__subtitle {
+    margin-top: 24px;
+    margin-bottom: 14px;
+  }
+
+  .site-footer__bottom {
+    min-height: 90px;
+  }
+
+}
+
+/* =========================
+   ACCORDEONS FOOTER
+========================= */
+
+.site-footer__accordion-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0;
+
+  color: #fff;
+  background: transparent;
+  border: 0;
+
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.site-footer__accordion-toggle span:first-child {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.site-footer__accordion-icon {
+  display: none;
+}
+
+.site-footer__accordion-content {
+  display: block;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+  .site-footer {
+    padding-top: 48px;
+  }
+
+  .site-footer__top {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-bottom: 32px;
+  }
+
+  .site-footer__brand {
+    margin-bottom: 24px;
+  }
+
+  .site-footer__logo img {
+    width: 150px;
+  }
+
+  .site-footer__baseline {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+
+  .site-footer__socials {
+    margin-bottom: 28px;
+  }
+
+  .site-footer__column,
+  .site-footer__about {
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .site-footer__column:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .site-footer__accordion-toggle {
+    min-height: 58px;
+    padding-block: 16px;
+  }
+
+  .site-footer__accordion-toggle span:first-child {
+    font-size: 1rem;
+  }
+
+  .site-footer__accordion-icon {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 300;
+
+    transition: transform 0.2s ease;
+  }
+
+  .site-footer__accordion-toggle[aria-expanded="true"] .site-footer__accordion-icon {
+    transform: rotate(45deg);
+  }
+
+  .site-footer__accordion-content {
+    display: none;
+    padding: 0 0 24px;
+  }
+
+  .site-footer__accordion-content.is-open {
+    display: block;
+  }
+
+  .site-footer__subtitle {
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    font-size: 0.9rem;
+  }
+
+  .site-footer__accordion-content .site-footer__subtitle:first-child {
+    margin-top: 4px;
+  }
+
+  .site-footer__list li + li {
+    margin-top: 8px;
+  }
+
+  .site-footer__list a {
+    font-size: 0.86rem;
+  }
+
+  .site-footer__bottom {
+    min-height: auto;
+
+    padding-block: 24px;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 16px;
+    border-top:var(--color-brand);
+  }
+
+  .site-footer__legal {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+}

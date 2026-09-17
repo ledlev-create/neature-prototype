@@ -1,0 +1,36 @@
+/* ==================================================
+   COMPONENT — CTA
+================================================== */
+
+.cta {
+  padding-block: var(--space-xl);
+}
+
+.cta__inner {
+  padding: var(--space-lg);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+
+  background: var(--surface-soft);
+  border-radius: var(--radius-lg);
+}
+
+.cta__eyebrow {
+  margin-bottom: 8px;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.cta__title {
+  font-size: var(--font-size-h2);
+}
+
+@media (max-width: 767px) {
+  .cta__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

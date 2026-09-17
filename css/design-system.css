@@ -1,0 +1,200 @@
+/* ==================================================
+   NEATURE — DESIGN SYSTEM
+   Fondations visuelles à retranscrire ensuite dans Uncode
+================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:root {
+  /* ---------- PRIMITIVES / PALETTE ---------- */
+
+  --blue-950: #314055;
+  --blue-900: #0e2658;
+  --blue-800: #1c2653;
+  --blue-700: #15254c;
+  --blue-600: #0e2345;
+
+  --blue-500: #2d9de3;
+  --blue-100: #eaf6fd;
+  --blue-050: #f4fafd;
+  --blue-010: #eaf1f7;
+
+  --green-500: #7daf58;
+  --green-100: #eef6e4;
+
+  --white: #ffffff;
+  --grey-050: #fafafa;
+  --grey-100: #f4f6f8;
+  --grey-200: #e6ebef;
+  --grey-500: #6c7b87;
+  --dark-grey: #353e4b;
+  --black: #111111;
+
+
+  --badge-blue-bg: #EBF6FD;
+  --badge-blue-text: #477897;
+
+  --badge-green-bg: #EAF3DE;
+  --badge-green-text: #427B54;
+
+  --badge-neutral-bg: #F0F4F8;
+  --badge-neutral-text: #666E76;
+
+
+  /* ---------- TOKENS SÉMANTIQUES ---------- */
+
+  --color-brand: var(--blue-950);
+  --color-accent: var(--blue-500);
+  --color-nature: var(--green-500);
+
+  --text-heading: var(--color-brand);
+  --text-body: var(--dark-grey);
+  --text-muted: var(--grey-500);
+  --text-inverse: var(--white);
+
+  --surface-page: var(--white);
+  --surface-soft: var(--blue-010);
+  --surface-card: var(--white);
+
+  --border-default: var(--grey-200);
+
+  
+  /* ---------- TYPOGRAPHIE ---------- */
+
+  --font-title: "Poppins", sans-serif;
+  --font-text: "Figtree", sans-serif;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-body: 1rem;
+  --font-size-lg: 1.125rem;
+
+  --font-size-h1: clamp(2.6rem, 4vw, 3.2rem);
+  --font-size-h2: clamp(2rem, 3vw, 2.5rem);
+  --font-size-h3: clamp(1rem, 2vw, 1.4rem);
+
+  --line-height-body: 1.55;
+  --line-height-heading: 1.05;
+
+  /* ---------- ESPACEMENTS ---------- */
+
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+  --space-xxl: 96px;
+  --space-3l: 128px;
+  --space-4l: 160px;
+
+  /* ---------- RAYONS ---------- */
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  /* ---------- OMBRES ---------- */
+
+  --shadow-card: 0 10px 30px rgba(0, 38, 92, 0.05);
+  --shadow-floating: 0 14px 40px rgba(0, 38, 92, 0.08);
+
+  /* ---------- LAYOUT ---------- */
+
+  --container-width: 1220px;
+  --page-gutter: 24px;
+
+  /* ---------- BREAKPOINTS (documentation) ----------
+     mobile : < 768px
+     tablette : 768px à 1099px
+     desktop : >= 1100px
+  */
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-text);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--text-body);
+  background: var(--surface-page);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-title);
+  font-weight: 600;
+  color: var(--text-heading);
+  line-height: var(--line-height-heading);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+@media (max-width: 700px) {
+  :root {
+    --font-size-h1: clamp(2.1rem, 9vw, 2.6rem);
+    --font-size-h2: clamp(1.7rem, 7vw, 2.1rem);
+    --font-size-h3: 1.35rem;
+  }
+}
+
+@media (max-width: 1099px) and (min-width: 701px) {
+  :root {
+    --font-size-h1: clamp(2.4rem, 5vw, 3rem);
+    --font-size-h2: clamp(1.9rem, 4vw, 2.4rem);
+    --font-size-h3: 1.5rem;
+  }
+}
+
+
+/* h1 {
+  letter-spacing: 0.055em;
+  font-weight: 300;
+} */
+

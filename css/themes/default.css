@@ -1,0 +1,8 @@
+/* Thème par défaut */
+:root {
+  /* --color-brand: #15254C; bleu plus foncé */
+  --color-brand: #112A52;
+  --color-accent: #2D9DE3;
+  --color-nature: #7DAF58;
+  --surface-soft: #EAF1F7;
+}

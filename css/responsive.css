@@ -1,0 +1,19 @@
+/* ==================================================
+   RESPONSIVE GLOBAL
+================================================== */
+
+@media (max-width: 1099px) {
+  .solutions-grid {
+    grid-template-columns: 1fr;
+    max-width: 650px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --page-gutter: 18px;
+    --space-xl: 48px;
+    --space-xxl: 72px;
+  }
+}

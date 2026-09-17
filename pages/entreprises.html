@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Neature — Entreprises</title>
+
+    <!-- DESIGN SYSTEM -->
+    <link rel="stylesheet" href="../css/design-system.css" />
+    <link rel="stylesheet" href="../css/themes/default.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+
+    <!-- COMPOSANTS GLOBAUX -->
+    <link rel="stylesheet" href="../css/components/header.css" />
+    <link rel="stylesheet" href="../css/components/button.css" />
+    <link rel="stylesheet" href="../css/components/badges.css" />
+    <link rel="stylesheet" href="../css/components/cta-contact.css" />
+    <link rel="stylesheet" href="../css/components/footer.css" />
+
+    <!-- COMPOSANTS ENTREPRISES -->
+    <link
+      rel="stylesheet"
+      href="../css/components/entreprises/accompagnement-entreprises.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../css/components/entreprises/secteurs-entreprises.css"
+    />
+
+    <!-- ICÔNES -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+
+    <!-- PAGE -->
+    <link rel="stylesheet" href="../css/pages/entreprises.css" />
+
+    <!-- RESPONSIVE -->
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <div data-component="../components/header"></div>
+
+    <!-- MAIN -->
+    <main>
+      <!-- HERO -->
+      <section class="entreprises-hero">
+        <div class="entreprises-hero__content">
+          <div class="entreprises-hero__inner">
+            <span class="badge badge--primary"> Entreprises </span>
+
+            <h1 class="entreprises-hero__title">
+              Neature accompagne les professionnels dans la
+              <span>maîtrise durable de leurs risques.</span>
+            </h1>
+
+            <h2 class="entreprises-hero__subtitle">
+              Protection sanitaire, préservation du bâti et protection des bois
+              : des dispositifs sur mesure pour vos sites, vos équipes et vos
+              exigences de conformité.
+            </h2>
+          </div>
+        </div>
+
+        <div class="entreprises-hero__media">
+          <img
+            src="../assets/images/entreprises/hero-entreprises.png"
+            alt="Technicien Neature échangeant avec un responsable de site professionnel"
+            class="entreprises-hero__image"
+          />
+        </div>
+      </section>
+
+      <!-- ACCOMPAGNEMENT -->
+      <div
+        data-component="../components/entreprises/accompagnement-entreprises"
+      ></div>
+
+      <!-- SECTEURS -->
+      <div
+        data-component="../components/entreprises/secteurs-entreprises"
+      ></div>
+
+      <!-- CTA CONTACT/DEVIS -->
+      <div data-component="../components/cta-contact"></div>
+    </main>
+
+    <!-- FOOTER -->
+    <div data-component="../components/footer"></div>
+
+    <!-- SCRIPTS -->
+    <script src="../js/components.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

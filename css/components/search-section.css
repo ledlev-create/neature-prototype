@@ -1,0 +1,39 @@
+.hero-search {
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 16px;
+  align-items: end;
+
+  background: var(--surface-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-floating);
+}
+
+.hero-search__field {
+  display: grid;
+  gap: 7px;
+}
+
+.hero-search__field label {
+  color: var(--text-heading);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.hero-search select {
+  width: 100%;
+  min-height: 48px;
+  padding-inline: 14px;
+
+  color: var(--text-heading);
+  background: var(--surface-card);
+
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+}
+
+.hero-search__button {
+  min-height: 48px;
+}

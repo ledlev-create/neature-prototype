@@ -1,0 +1,373 @@
+/* ==================================================
+   SECTEURS ENTREPRISES
+================================================== */
+
+.secteurs-entreprises {
+  padding-block:
+    var(--space-xxl)
+    var(--space-xxl);
+
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #f7fbfd 42%,
+    #eef7fb 100%
+  );
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.secteurs-entreprises__header {
+  max-width: 860px;
+
+  margin: 0 auto var(--space-xl);
+
+  text-align: center;
+}
+
+.secteurs-entreprises__title {
+  max-width: 760px;
+
+  margin:
+    var(--space-md)
+    auto
+    var(--space-md);
+
+  color: var(--color-brand);
+
+  font-family: var(--font-title);
+  font-size: var(--font-size-h2);
+  font-weight: 600;
+  line-height: 1.08;
+}
+
+.secteurs-entreprises__intro {
+  max-width: 700px;
+
+  margin-inline: auto;
+
+  color: var(--color-brand);
+
+  font-family: var(--font-text);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+
+  opacity: 0.78;
+}
+
+
+/* ==================================================
+   GRID
+================================================== */
+
+.secteurs-entreprises__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: var(--space-md);
+
+  max-width: 1180px;
+
+  margin-inline: auto;
+}
+
+
+/* ==================================================
+   CARD — BASE
+================================================== */
+
+.secteur-card {
+  --sector-accent: var(--color-accent);
+  --sector-soft: #eef7fb;
+
+  position: relative;
+
+  min-height: 330px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: var(--space-lg);
+
+  background: #ffffff;
+
+  border: 1px solid rgba(17, 42, 82, 0.08);
+  border-radius: var(--radius-md);
+
+  box-shadow:
+    0 10px 28px rgba(17, 42, 82, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.secteur-card:hover {
+  transform: translateY(-5px);
+
+  border-color: color-mix(
+    in srgb,
+    var(--sector-accent) 30%,
+    transparent
+  );
+
+  box-shadow:
+    0 18px 38px rgba(17, 42, 82, 0.11);
+}
+
+
+/* ==================================================
+   CARD — COULEURS
+================================================== */
+
+.secteur-card--green {
+  --sector-accent: #4e8b61;
+  --sector-soft: #eef7e8;
+}
+
+.secteur-card--gold {
+  --sector-accent: #c58a32;
+  --sector-soft: #fbf2df;
+}
+
+.secteur-card--blue {
+  --sector-accent: #4a90b8;
+  --sector-soft: #eaf6fc;
+}
+
+.secteur-card--grey {
+  --sector-accent: #7f8fa3;
+  --sector-soft: #f0f3f6;
+}
+
+
+/* ==================================================
+   ICON
+================================================== */
+
+.secteur-card__icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: var(--space-md);
+
+  background: var(--sector-soft);
+  color: var(--sector-accent);
+
+  border-radius: 10px;
+}
+
+.secteur-card__icon i {
+  display: block;
+
+  font-size: 23px;
+  line-height: 1;
+}
+
+
+/* ==================================================
+   TITLE
+================================================== */
+
+.secteur-card__title {
+  margin: 0 0 var(--space-sm);
+
+  color: var(--color-brand);
+
+  font-family: var(--font-title);
+  font-size: var(--font-size-h3);
+  font-weight: 600;
+  line-height: 1.18;
+}
+
+
+/* ==================================================
+   TEXT
+================================================== */
+
+.secteur-card__text {
+  margin: 0 0 var(--space-md);
+
+  color: var(--color-brand);
+
+  font-family: var(--font-text);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.55;
+
+  opacity: 0.76;
+}
+
+
+/* ==================================================
+   LINK
+================================================== */
+
+.secteur-card__link {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+
+  margin-top: auto;
+
+  padding-bottom: 5px;
+
+  color: var(--color-brand);
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.secteur-card__link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 1px;
+
+  background: var(--color-brand);
+
+  transform-origin: left;
+  transform: scaleX(1);
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.secteur-card__link:hover {
+  color: var(--sector-accent);
+}
+
+.secteur-card__link:hover::after {
+  background: var(--sector-accent);
+
+  transform: scaleX(0.75);
+}
+
+
+/* ==================================================
+   TABLETTE
+================================================== */
+
+@media (max-width: 1100px) {
+
+  .secteurs-entreprises {
+    padding-block:
+      var(--space-xl)
+      var(--space-xxl);
+  }
+
+  .secteurs-entreprises__header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .secteurs-entreprises__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    max-width: 760px;
+
+    gap: var(--space-md);
+  }
+
+  .secteur-card {
+    min-height: 300px;
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+  .secteurs-entreprises {
+    padding-block:
+      var(--space-xl)
+      var(--space-xl);
+  }
+
+  .secteurs-entreprises__header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .secteurs-entreprises__title {
+    max-width: none;
+  }
+
+  .secteurs-entreprises__intro {
+    max-width: none;
+  }
+
+  .secteurs-entreprises__grid {
+    grid-template-columns: 1fr;
+
+    max-width: 520px;
+
+    gap: var(--space-sm);
+  }
+
+  .secteur-card {
+    min-height: auto;
+
+    padding: var(--space-md);
+  }
+
+}
+
+
+/* ==================================================
+   PETIT MOBILE
+================================================== */
+
+@media (max-width: 480px) {
+
+  .secteurs-entreprises {
+    padding-block:
+      var(--space-lg)
+      var(--space-xl);
+  }
+
+  .secteur-card {
+    padding:
+      var(--space-md)
+      var(--space-sm);
+  }
+
+  .secteur-card__icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .secteur-card__icon i {
+    font-size: 21px;
+  }
+
+  .secteur-card__text,
+  .secteur-card__link {
+    font-size: 0.92rem;
+  }
+
+}

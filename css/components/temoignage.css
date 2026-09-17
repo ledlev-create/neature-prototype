@@ -1,0 +1,402 @@
+/* ==================================================
+   COMPONENT — TEMOIGNAGE
+================================================== */
+
+.temoignage__track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 52px;
+}
+
+.temoignage {
+  padding-block: var(--space-4l);
+  background: #f9f9f9;
+}
+
+.temoignage > .container {
+  width: min(100% - 48px, var(--container-width));
+  margin-inline: auto;
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.temoignage__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 48px;
+
+  margin-bottom: 64px;
+}
+
+.temoignage__heading {
+  max-width: 520px;
+}
+
+.temoignage__title {
+  font-size: var(--font-size-h2);
+  font-weight: 600;
+  line-height: 1.05;
+
+  color: var(--color-brand);
+
+  margin-bottom: 20px;
+}
+
+/* ==================================================
+   NOTE
+================================================== */
+
+.temoignage__rating {
+  min-width: 260px;
+
+  text-align: left;
+}
+
+.temoignage__rating-value {
+  color: var(--color-accent);
+
+  font-size: clamp(3.4rem, 5vw, 5.5rem);
+  font-weight: 600;
+  line-height: 0.95;
+}
+
+.temoignage__rating-value sup {
+  position: relative;
+  top: -0.6em;
+
+  margin-left: 4px;
+
+  font-size: 0.4em;
+}
+
+.temoignage__rating-text {
+  margin-top: 10px;
+
+  color: var(--color-accent);
+
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* ==================================================
+   GRID
+================================================== */
+
+.temoignage__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 52px;
+}
+
+/* ==================================================
+   CARD
+================================================== */
+
+.temoignage-card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+/* ==================================================
+   ÉTOILES
+================================================== */
+
+.temoignage-card__stars {
+  margin-bottom: 20px;
+
+  color: #f2b822;
+
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+}
+
+/* ==================================================
+   TEXTE
+================================================== */
+
+.temoignage-card__text {
+  margin-bottom: 28px;
+
+  color: var(--color-brand);
+
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+/* ==================================================
+   AUTEUR
+================================================== */
+
+.temoignage-card__author {
+  margin-top: auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+.temoignage-card__avatar {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background: var(--surface-soft);
+}
+
+.temoignage-card__avatar img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.temoignage-card__author-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.temoignage-card__author-info strong {
+  color: var(--color-brand);
+
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.temoignage-card__author-info span {
+  color: var(--color-accent);
+
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+/* ==================================================
+   TABLETTE
+================================================== */
+
+@media (max-width: 1099px) and (min-width: 701px) {
+  .temoignage {
+    padding-block: 80px 90px;
+  }
+
+  .temoignage > .container {
+    width: 85%;
+  }
+
+  .temoignage__header {
+    gap: 32px;
+    margin-bottom: 52px;
+  }
+
+  .temoignage__title {
+    font-size: 2.5rem;
+  }
+
+  .temoignage__rating {
+    min-width: 220px;
+  }
+
+  .temoignage__rating-value {
+    font-size: 4.2rem;
+  }
+
+  /* ==================================================
+     CAROUSEL TABLETTE
+  ================================================== */
+
+  .temoignage__carousel {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .temoignage__track {
+    display: flex;
+
+    gap: 20px;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    padding-bottom: 12px;
+    padding-right: 20px;
+
+    scrollbar-width: none;
+  }
+
+  .temoignage__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ==================================================
+     CARDS
+  ================================================== */
+
+  .temoignage-card {
+    flex: 0 0 calc(50% - 10px);
+
+    scroll-snap-align: start;
+
+    padding: 28px 24px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(22, 44, 90, 0.08);
+    border-radius: var(--radius-md);
+
+    box-shadow: 0 12px 30px rgba(22, 44, 90, 0.06);
+  }
+
+  .temoignage-card__text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+  .temoignage {
+    padding-block: 64px;
+  }
+
+  .temoignage > .container {
+    width: calc(100% - 40px);
+  }
+
+  .temoignage__header {
+    display: block;
+    margin-bottom: 42px;
+  }
+
+  .temoignage__heading {
+    max-width: none;
+  }
+
+  .temoignage__rating {
+    margin-top: 26px;
+    min-width: 0;
+  }
+
+  .temoignage__rating-value {
+    font-size: 3.8rem;
+  }
+
+  /* ==================================================
+     CAROUSEL
+  ================================================== */
+
+  .temoignage__carousel {
+    width: 100%;
+
+    overflow: hidden;
+  }
+
+  .temoignage__track {
+    display: flex;
+
+    gap: 16px;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    padding-bottom: 12px;
+    padding-right: 24px;
+
+    scrollbar-width: none;
+  }
+
+  .temoignage__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ==================================================
+     CARDS
+  ================================================== */
+
+  .temoignage-card {
+    flex: 0 0 88%;
+
+    scroll-snap-align: start;
+
+    padding: 26px 22px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(22, 44, 90, 0.08);
+    border-radius: var(--radius-md);
+
+    box-shadow: 0 12px 30px rgba(22, 44, 90, 0.06);
+  }
+
+  .temoignage-card:last-child {
+    border-bottom: 1px solid rgba(22, 44, 90, 0.08);
+  }
+
+  .temoignage-card__stars {
+    margin-bottom: 18px;
+  }
+
+  .temoignage-card__text {
+    margin-bottom: 24px;
+
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+}
+
+/* ==================================================
+   PETIT MOBILE
+================================================== */
+
+@media (max-width: 420px) {
+  .temoignage {
+    padding-block: 56px;
+  }
+
+  .temoignage > .container {
+    width: calc(100% - 32px);
+  }
+
+  .temoignage__title {
+    font-size: 1.8rem;
+  }
+
+  .temoignage__rating-value {
+    font-size: 3.4rem;
+  }
+
+  /* Carte un peu plus large sur petit écran */
+
+  .temoignage-card {
+    flex-basis: 92%;
+
+    padding: 24px 20px;
+  }
+
+  .temoignage__track {
+    gap: 12px;
+
+    padding-right: 18px;
+  }
+}

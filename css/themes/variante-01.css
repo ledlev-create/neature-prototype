@@ -1,0 +1,11 @@
+/* Variante colorimétrique 01 */
+:root {
+  --color-brand:      #162C5A;
+  --color-accent:     #56BCEB;
+  --color-secondary : #FFF2CD;
+
+  --color-success:#7CBCA1;
+  --color-success-soft:#BFE0D2;
+  
+  --surface-soft: #EDF7FC;
+}
