@@ -1,28 +1,29 @@
 /* ==================================================
+   PROJECT BASE PATH
+================================================== */
+
+const BASE_PATH = window.location.hostname.includes("github.io")
+  ? "/neature-prototype/"
+  : "/";
+
+/* ==================================================
    COMPONENTS LOADER
 ================================================== */
 
 async function loadComponents() {
   const slots = document.querySelectorAll("[data-component]");
-  const pathname = window.location.pathname;
-
-  let rootPath = "";
-
-  if (pathname.includes("/pages/expertises/")) {
-    rootPath = "../../";
-  } else if (pathname.includes("/pages/")) {
-    rootPath = "../";
-  }
 
   for (const slot of slots) {
     const componentName = slot.dataset.component;
     let path;
 
-    // Chemin personnalisé ou chemin standard vers /components
-    if (componentName.startsWith("../") || componentName.startsWith("./")) {
+    if (
+      componentName.startsWith("../") ||
+      componentName.startsWith("./")
+    ) {
       path = `${componentName}.html`;
     } else {
-      path = `${rootPath}components/${componentName}.html`;
+      path = `${BASE_PATH}components/${componentName}.html`;
     }
 
     try {
@@ -33,15 +34,37 @@ async function loadComponents() {
       }
 
       slot.innerHTML = await response.text();
+
+      // Corrige les chemins absolus dans les composants
+      slot.querySelectorAll("[href], [src]").forEach((element) => {
+        const href = element.getAttribute("href");
+        const src = element.getAttribute("src");
+
+        if (href && href.startsWith("/") && !href.startsWith("//")) {
+          element.setAttribute(
+            "href",
+            `${BASE_PATH}${href.slice(1)}`
+          );
+        }
+
+        if (src && src.startsWith("/") && !src.startsWith("//")) {
+          element.setAttribute(
+            "src",
+            `${BASE_PATH}${src.slice(1)}`
+          );
+        }
+      });
+
     } catch (error) {
       console.error(error);
     }
   }
 
-  // Informe les autres scripts que tous les composants sont chargés
-  document.dispatchEvent(new CustomEvent("components:loaded"));
+  // Tous les composants sont maintenant chargés
+  document.dispatchEvent(
+    new CustomEvent("components:loaded")
+  );
 }
-
 
 /* ==================================================
    MEGA MENUS
