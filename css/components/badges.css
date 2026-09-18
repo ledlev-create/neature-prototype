@@ -36,7 +36,6 @@
 }
 
 .badge--section {
-  background: #ffffff;
   color: var(--color-brand);
   border: solid 1px var(--color-brand);
 }
