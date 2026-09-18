@@ -27,7 +27,7 @@
 
   align-items: start;
 
-  gap: var(--space-xxl);
+  gap: var(--space-xl);
 }
 
 
@@ -38,8 +38,6 @@
 .faq-entreprises__aside {
   display: flex;
   flex-direction: column;
-
-  gap: var(--space-xl);
 }
 
 
@@ -48,35 +46,7 @@
 ================================================== */
 
 .faq-entreprises__header {
-  max-width: 430px;
-}
-
-
-/* ==================================================
-   EYEBROW
-================================================== */
-
-.faq-entreprises__eyebrow {
-  display: inline-flex;
-
-  margin-bottom: var(--space-lg);
-
-  padding:
-    var(--space-xs)
-    var(--space-sm);
-
-  color: var(--color-brand);
-
-  background: rgba(86, 188, 235, 0.12);
-
-  border-radius: var(--radius-pill);
-
-  font-family: var(--font-text);
-  font-size: 0.72rem;
-  font-weight: 600;
-
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  max-width: 470px;
 }
 
 
@@ -95,7 +65,7 @@
   font-family: var(--font-title);
   font-size: var(--font-size-h2);
   font-weight: 650;
-  line-height: 1.02;
+  line-height: 1.08;
 }
 
 
@@ -116,158 +86,6 @@
   line-height: 1.6;
 
   opacity: 0.72;
-}
-
-
-/* ==================================================
-   CONTACT
-================================================== */
-
-.faq-entreprises__contact {
-  max-width: 430px;
-
-  padding: var(--space-md);
-
-  background: #ffffff;
-
-  border: none;
-  border-radius: var(--radius-md);
-
-  box-shadow: var(--shadow-card);
-}
-
-
-/* ==================================================
-   CONTACT COPY
-================================================== */
-
-.faq-entreprises__contact-copy > span {
-  display: block;
-
-  margin-bottom: 4px;
-
-  color: var(--color-accent);
-
-  font-family: var(--font-text);
-  font-size: 0.68rem;
-  font-weight: 700;
-
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-
-
-.faq-entreprises__contact-copy h3 {
-  margin:
-    0
-    0
-    var(--space-xs);
-
-  color: var(--color-brand);
-
-  font-family: var(--font-title);
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.25;
-}
-
-
-.faq-entreprises__contact-copy p {
-  margin: 0;
-
-  color: var(--color-brand);
-
-  font-family: var(--font-text);
-  font-size: 0.88rem;
-  line-height: 1.45;
-
-  opacity: 0.7;
-}
-
-
-/* ==================================================
-   CONTACT ACTIONS
-================================================== */
-
-.faq-entreprises__contact-actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-
-  gap: var(--space-sm);
-
-  margin-top: var(--space-md);
-}
-
-
-/* ==================================================
-   TELEPHONE
-================================================== */
-
-.faq-entreprises__phone {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: var(--space-xs);
-
-  padding:
-    12px
-    var(--space-md);
-
-  color: #ffffff;
-  background: var(--color-brand);
-
-  border: 1px solid var(--color-brand);
-  border-radius: var(--radius-pill);
-
-  font-family: var(--font-text);
-  font-size: 0.9rem;
-  font-weight: 500;
-
-  text-decoration: none;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
-}
-
-
-.faq-entreprises__phone:hover {
-  color: var(--color-brand);
-  background: transparent;
-}
-
-
-/* ==================================================
-   LIEN CONTACT
-================================================== */
-
-.faq-entreprises__contact-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-
-  width: fit-content;
-
-  color: var(--color-brand);
-  text-decoration: none;
-
-  border-bottom: 1px solid currentColor;
-
-  padding-bottom: 2px;
-}
-
-
-.faq-entreprises__contact-link i {
-  font-size: 1rem;
-  line-height: 1;
-}
-
-
-.faq-entreprises__contact-link:hover {
-  color: var(--color-accent);
 }
 
 
@@ -469,23 +287,11 @@
       minmax(250px, 0.65fr)
       minmax(0, 1.35fr);
 
-    gap: var(--space-xl);
+    gap: var(--space-lg);
   }
 
-
-  .faq-entreprises__contact-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-
-  .faq-entreprises__phone {
-    width: 100%;
-  }
-
-
-  .faq-entreprises__contact-link {
-    justify-content: center;
+  .faq-entreprises__title {
+    font-size: 2rem;
   }
 
 }
@@ -495,7 +301,7 @@
    MOBILE
 ================================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 760px) {
 
   .faq-entreprises {
     padding-block: var(--space-xl);
@@ -509,19 +315,8 @@
   }
 
 
-  .faq-entreprises__aside {
-    gap: var(--space-lg);
-  }
-
-
-  .faq-entreprises__header,
-  .faq-entreprises__contact {
+  .faq-entreprises__header {
     max-width: none;
-  }
-
-
-  .faq-entreprises__eyebrow {
-    margin-bottom: var(--space-md);
   }
 
 
@@ -570,24 +365,6 @@
     max-width: none;
   }
 
-
-  /* CONTACT */
-
-  .faq-entreprises__contact-actions {
-    flex-direction: row;
-    align-items: center;
-  }
-
-
-  .faq-entreprises__phone {
-    width: auto;
-  }
-
-
-  .faq-entreprises__contact-link {
-    justify-content: flex-start;
-  }
-
 }
 
 
@@ -596,27 +373,6 @@
 ================================================== */
 
 @media (max-width: 420px) {
-
-  .faq-entreprises__contact {
-    padding: var(--space-sm);
-  }
-
-
-  .faq-entreprises__contact-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-
-  .faq-entreprises__phone {
-    width: 100%;
-  }
-
-
-  .faq-entreprises__contact-link {
-    justify-content: center;
-  }
-
 
   .faq-entreprises__question {
     grid-template-columns:

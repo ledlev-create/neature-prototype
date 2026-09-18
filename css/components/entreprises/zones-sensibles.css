@@ -4,8 +4,10 @@
 
 .zones-sensibles {
   padding-block: var(--space-xxl);
-  background: white;
+
+  background: #ffffff;
 }
+
 
 /* ==================================================
    HEADER
@@ -14,34 +16,25 @@
 .zones-sensibles__header {
   max-width: 850px;
 
-  margin: 0 auto 54px;
+  margin:
+    0 auto
+    54px;
 
   text-align: center;
 }
 
+
 .zones-sensibles__title {
-  margin-bottom: 12px;
+  margin: 0;
 
   color: var(--color-brand);
 
+  font-family: var(--font-title);
   font-size: var(--font-size-h2);
   font-weight: 600;
   line-height: 1.08;
 }
 
-.zones-sensibles__intro {
-  max-width: 760px;
-
-  margin-inline: auto;
-
-  color: var(--color-brand);
-
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.55;
-
-  opacity: 0.74;
-}
 
 /* ==================================================
    GRID
@@ -50,10 +43,12 @@
 .zones-sensibles__grid {
   display: grid;
 
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
 
   gap: 24px;
 }
+
 
 /* ==================================================
    CARD
@@ -73,12 +68,14 @@
   border: 1px solid rgba(22, 44, 90, 0.06);
   border-radius: var(--radius-md);
 
-  box-shadow: 0 10px 28px rgba(22, 44, 90, 0.07);
+  box-shadow:
+    0 10px 28px rgba(22, 44, 90, 0.07);
 
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
 }
+
 
 /* ==================================================
    IMAGE
@@ -94,16 +91,19 @@
   background: #e8eef3;
 }
 
+
 .zone-sensible-card__media img {
+  display: block;
+
   width: 100%;
   height: 100%;
 
-  display: block;
-
   object-fit: cover;
 
-  transition: transform 0.35s ease;
+  transition:
+    transform 0.35s ease;
 }
+
 
 /* ==================================================
    CONTENT
@@ -112,11 +112,15 @@
 .zone-sensible-card__content {
   flex: 1;
 
-  padding: 24px 26px 28px;
-
   display: flex;
   flex-direction: column;
+
+  padding:
+    24px
+    26px
+    28px;
 }
+
 
 /* ==================================================
    HEADING
@@ -131,6 +135,7 @@
   margin-bottom: 12px;
 }
 
+
 .zone-sensible-card__heading i {
   flex-shrink: 0;
 
@@ -141,15 +146,18 @@
   font-size: 22px;
 }
 
+
 .zone-sensible-card__heading h3 {
   margin: 0;
 
   color: var(--color-brand);
 
+  font-family: var(--font-title);
   font-size: 1rem;
   font-weight: 600;
-  line-height: 1.75;
+  line-height: 1.5;
 }
+
 
 /* ==================================================
    TEXT
@@ -160,6 +168,7 @@
 
   color: var(--color-brand);
 
+  font-family: var(--font-text);
   font-size: 0.94rem;
   font-weight: 400;
   line-height: 1.55;
@@ -167,60 +176,110 @@
   opacity: 0.78;
 }
 
+
+/* ==================================================
+   TRANSITION
+================================================== */
+
+.zones-sensibles__transition {
+  max-width: 880px;
+
+  margin:
+    var(--space-lg)
+    auto
+    0;
+
+  color: var(--color-brand);
+
+  font-family: var(--font-text);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+
+  text-align: center;
+
+  opacity: 0.82;
+}
+
+
 /* ==================================================
    HOVER
 ================================================== */
 
 @media (hover: hover) and (pointer: fine) {
+
   .zone-sensible-card:hover {
     transform: translateY(-5px);
 
-    box-shadow: 0 16px 38px rgba(22, 44, 90, 0.11);
+    box-shadow:
+      0 16px 38px rgba(22, 44, 90, 0.11);
   }
+
 
   .zone-sensible-card:hover .zone-sensible-card__media img {
     transform: scale(1.035);
   }
+
 }
+
 
 /* ==================================================
    TABLETTE
 ================================================== */
 
 @media (max-width: 1099px) {
+
   .zones-sensibles {
-    padding-block: 80px 90px;
+    padding-block:
+      80px
+      90px;
   }
 
+
+  .zones-sensibles__header {
+    margin-bottom: var(--space-lg);
+  }
+
+
   .zones-sensibles__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
 
     gap: 22px;
   }
 
+
   .zone-sensible-card__media {
     height: 190px;
   }
+
+
+  .zones-sensibles__transition {
+    max-width: 760px;
+
+    margin-top: var(--space-lg);
+  }
+
 }
+
 
 /* ==================================================
    MOBILE
 ================================================== */
 
 @media (max-width: 700px) {
+
   .zones-sensibles {
-    padding-block: 64px;
+    padding-block: var(--space-xl);
   }
 
+
   .zones-sensibles__header {
-    margin-bottom: 36px;
+    margin-bottom: var(--space-lg);
 
     text-align: left;
   }
 
-  .zones-sensibles__intro {
-    margin-inline: 0;
-  }
 
   .zones-sensibles__grid {
     grid-template-columns: 1fr;
@@ -228,37 +287,59 @@
     gap: 18px;
   }
 
+
   .zone-sensible-card__media {
     height: 200px;
   }
 
+
   .zone-sensible-card__content {
-    padding: 22px 22px 26px;
+    padding:
+      22px
+      22px
+      26px;
   }
+
 
   .zone-sensible-card__heading {
     margin-bottom: 12px;
   }
 
+
   .zone-sensible-card__heading h3 {
     font-size: 1.05rem;
   }
 
+
   .zone-sensible-card__content p {
     font-size: 0.95rem;
   }
+
+
+  .zones-sensibles__transition {
+    margin-top: var(--space-md);
+
+    text-align: left;
+
+    font-size: 0.95rem;
+  }
+
 }
+
 
 /* ==================================================
    PETIT MOBILE
 ================================================== */
 
 @media (max-width: 420px) {
+
   .zone-sensible-card__media {
     height: 180px;
   }
 
+
   .zone-sensible-card__content {
     padding: 20px;
   }
+
 }

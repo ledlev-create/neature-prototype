@@ -1,0 +1,330 @@
+/* ==================================================
+   COMPONENT — CONTACT ENTREPRISE
+================================================== */
+
+.contact-entreprise {
+  padding-block: var(--space-xl);
+  background: var(--color-background);
+}
+
+
+/* ==================================================
+   INNER
+================================================== */
+
+.contact-entreprise__inner {
+  width: min(calc(100% - 48px), var(--container-width));
+  margin-inline: auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 44%) minmax(0, 56%);
+
+  overflow: hidden;
+
+  background: #ffffff;
+  border: 1px solid rgba(22, 44, 90, 0.08);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+
+/* ==================================================
+   MEDIA
+================================================== */
+
+.contact-entreprise__media {
+  min-width: 0;
+  min-height: 100%;
+  overflow: hidden;
+  background: var(--surface-soft);
+}
+
+.contact-entreprise__media img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.contact-entreprise__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding:
+    clamp(28px, 3vw, 40px)
+    clamp(24px, 3vw, 42px);
+}
+
+
+/* ==================================================
+   TITLE
+================================================== */
+
+.contact-entreprise__title {
+  margin: 0 0 var(--space-sm);
+
+  color: var(--color-brand);
+
+  font-family: var(--font-title);
+  font-size: var(--font-size-h2);
+  font-weight: 650;
+  line-height: 1.08;
+}
+
+
+/* ==================================================
+   INTRO
+================================================== */
+
+.contact-entreprise__intro {
+  max-width: 760px;
+
+  margin: 0 0 var(--space-md);
+
+  color: var(--color-brand);
+
+  font-family: var(--font-text);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+
+  opacity: 0.78;
+}
+
+
+/* ==================================================
+   ACTIONS
+================================================== */
+
+.contact-entreprise__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+
+  margin-bottom: var(--space-md);
+}
+
+.contact-entreprise__actions .button {
+  min-height: 52px;
+}
+
+.contact-entreprise__phone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.contact-entreprise__phone i {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+
+/* ==================================================
+   META
+================================================== */
+
+.contact-entreprise__meta {
+  margin: 0;
+
+  color: var(--color-brand);
+
+  font-family: var(--font-text);
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.5;
+
+  opacity: 0.68;
+}
+
+/* ==================================================
+   TABLETTE
+================================================== */
+
+@media (max-width: 1099px) {
+
+  .contact-entreprise {
+    padding-block: var(--space-lg);
+  }
+
+
+  .contact-entreprise__inner {
+    grid-template-columns:
+      minmax(0, 42%)
+      minmax(0, 58%);
+  }
+
+
+  .contact-entreprise__media {
+    min-height: 340px;
+  }
+
+
+  .contact-entreprise__media img {
+    object-position: center;
+  }
+
+
+  .contact-entreprise__content {
+    padding:
+      var(--space-lg)
+      var(--space-md);
+  }
+
+
+  .contact-entreprise__title {
+    font-size: clamp(1.7rem, 3vw, 2.2rem);
+  }
+
+
+  .contact-entreprise__intro {
+    font-size: 0.95rem;
+  }
+
+
+  .contact-entreprise__actions {
+    gap: var(--space-sm);
+  }
+
+
+  .contact-entreprise__actions .button {
+    min-height: 48px;
+  }
+
+
+  .contact-entreprise__meta {
+    font-size: 0.88rem;
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 760px) {
+
+  .contact-entreprise {
+    padding-block: var(--space-lg);
+  }
+
+
+  .contact-entreprise__inner {
+    width: calc(100% - 40px);
+
+    grid-template-columns: 1fr;
+  }
+
+
+  .contact-entreprise__media {
+    min-height: 0;
+    height: 220px;
+  }
+
+
+  .contact-entreprise__media img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+
+  .contact-entreprise__content {
+    padding:
+      var(--space-md)
+      var(--space-md)
+      var(--space-lg);
+  }
+
+
+  .contact-entreprise__title {
+    font-size: clamp(1.6rem, 8vw, 2.1rem);
+    line-height: 1.08;
+  }
+
+
+  .contact-entreprise__intro {
+    margin-bottom: var(--space-md);
+
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+
+  .contact-entreprise__actions {
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: var(--space-sm);
+  }
+
+
+  .contact-entreprise__actions .button {
+    width: 100%;
+    min-height: 48px;
+  }
+
+
+  .contact-entreprise__meta {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+}
+
+
+/* ==================================================
+   PETIT MOBILE
+================================================== */
+
+@media (max-width: 420px) {
+
+  .contact-entreprise {
+    padding-block: var(--space-md);
+  }
+
+
+  .contact-entreprise__inner {
+    width: calc(100% - 32px);
+  }
+
+
+  .contact-entreprise__media {
+    height: 185px;
+  }
+
+
+  .contact-entreprise__content {
+    padding: 20px;
+  }
+
+
+  .contact-entreprise__title {
+    font-size: 1.55rem;
+  }
+
+
+  .contact-entreprise__intro {
+    font-size: 0.94rem;
+  }
+
+
+  .contact-entreprise__meta {
+    font-size: 0.82rem;
+  }
+
+}
